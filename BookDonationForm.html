@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family:cursive;
+            background: rgb(194, 194, 194);
+            text-align: top, center;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Donation</h1>
+
+    <p>Fill out this form to donate a book to the Central Library</p>
+
+    <form>
+        <fieldset>
+            <legend>Donor Details</legend>
+
+            <label>Name</label><br>
+            <input type="text" id="name" placeholder="Enter your full name"><br><br>
+
+            <label>Phone Number</label>
+            <input type="numbers" id="phone no" placeholder="Enter your phone number"><br><br>
+
+        </fieldset><br>
+        <fieldset>
+            <legend>Book Details</legend><br>
+
+            <label>Book Title</label>
+                <input type="text" id="title" placeholder="Enter the title of your book"><br><br>
+
+            <label>Book Genre</label>
+            <select id="Genre">
+                <option value="history">History</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="poetry">Poetry</option>
+                <option value="thriller">Thriller</option>
+                <option value="kids">Kids</option>
+                <option value="educational">Educational</option>
+                <option value="other">Other</option><br><br>
+
+            </select>
+        </fieldset><br>
+        <fieldset>
+            <legend>Drop-Off Details</legend><br>
+
+            <label>Drop Date</label>
+            <input type="date" id="date" placeholder="Enter date of drop-off"><br><br>
+
+            <label>Drop Time</label>
+            <input type="time" id="time" placeholder="Enter time of drop-off">
+
+            
+        </fieldset>
+    </form>
+
+    
+</body>
+</html>
