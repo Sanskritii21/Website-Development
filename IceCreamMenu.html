@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 25px;
+            text-align: center;
+            background: rgb(210, 233, 202);
+            font-family: Courier, monospace;
+            width: 900px;
+            
+        }
+
+        h1 {
+           color: green;
+           
+        }
+
+        h1 + p {
+            background: rgb(198, 248, 198);
+            padding: 10px, 20px;
+            color: green;
+            font-weight: bold;
+            border-radius: 10px;
+            display: inline-block;
+            
+        }
+
+        ul {padding: 0; margin-top: 20px;} 
+
+        ul > li {
+        list-style: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: green;
+        padding: 10px, 20px;
+        margin: 6px auto;
+        width: 260px;
+        background: hsl(133, 59%, 87%);
+        border-radius: 8px;
+       }
+
+        ul li:nth-child(4) {
+        background: #3ba019;
+        color: #ffffff;
+       }
+
+       .desc {
+        color: #555;
+        margin-top: 20px;
+        font-size: 15px;
+        max-width: 4000px;
+        margin-right: auto;
+        margin-left: auto;
+       }
+
+        .desc::first-letter {
+            font-size: 210%;
+            color: green;
+            font-weight: bold;
+        }
+
+        .links {margin-top: 25px;}
+
+        a {
+            color: green;
+            text-decoration: none;
+            font-size: 15px;
+            margin: 0 12px;
+            padding: 8px 18px;
+            border: 2px solid ;
+            border-radius: 8px;
+        }
+
+        a:hover {
+            background: green;
+            color: white;
+        }
+            
+    </style>
+</head>
+<body>
+    <h1>Ice Cream Menu</h1>
+    <p>Pick your favorite flavour and enjoy!</p>
+
+    <ul>
+        <li>Chocolate</li>
+        <li>Vanilla</li>
+        <li>Butterscotch</li>
+        <li>Kesar Pista - Today's Recommendation!</li>
+        <li>Strawberry</li>
+        <li>Mango</li>
+        <li>Orange</li>
+    </ul>
+
+    <p class="desc">Every ice cream on this menu is made with love and loads of flavour. Try them all and find your favorite!</p>
+
+    <div class="links">
+        <a href="#">Order Now</a>
+        <a href="#">See More</a>
+    </div>
+
+</body>
+</html>
