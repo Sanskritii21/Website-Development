@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: rgba(161, 51, 51, 0.984);
+            text-align: center;
+            padding: 30px;
+            color: antiquewhite;
+        }
+        h1 {color: silver;}
+        button {
+            background-color: silver;
+            color: rgb(31, 30, 30);
+            padding: 10px 25px;
+            border: none;
+            font-weight: bolder; 
+        }
+        div {
+            border: 3px solid antiquewhite;
+            border-radius: 8px;
+            padding: 8px 12px;
+            width: 280px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>My Game Profile</h1>
+    <button onclick="showProfile()">Show Profile</button><br><br>
+
+    <div>Name: <span id="name"></span></div><br>
+    <div>Score: <span id="score"></span></div><br>
+    <div>Top Score: <span id="record"></span></div><br>
+    <div>Rank: <span id="rank"></span></div><br>
+    <div>Greeting: <span id="greeting"></span></div><br>
+    <div>Stars: <span id="stars"></span></div><br>
+    <div>Bonus Level: <span id="bonus"></span></div><br>
+    <div>Team Name: <span id="team"></span></div><br>
+
+    <script>
+        function showProfile() {
+            let name = "Kriti";
+            let myScore = 75;
+            let highScore = 100;
+            let bonus = null;
+            let team;
+
+            let isTopScore = myScore == highScore;
+
+            let rank;
+            if (myScore >= 80) {
+                rank = "Gold";
+            } else if (myScore >= 50) {
+                rank = "Silver";
+            } else {
+                rank = "Bronze";
+            }
+
+            let hour = new Date().getHours;
+            let greeting;
+            if ( hour < 12) {
+                greeting = "<Good Morning.";
+            } else if (hour < 17) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+
+            let stars = "";
+            let count = 0;
+            while (count < 5) {
+                stars = stars + "*";
+                count = count + 1;
+            }
+
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("score").innerHTML = myScore + " out of " + highScore;
+            document.getElementById("record").innerHTML = isTopScore;
+            document.getElementById("rank").innerHTML = rank;
+            document.getElementById("greeting").innerHTML = greeting;
+            document.getElementById("stars").innerHTML = stars;
+            document.getElementById("bonus").innerHTML = bonus;
+            document.getElementById("team").innerHTML = team;
+
+        }
+    </script>
+</body>
+</html>
