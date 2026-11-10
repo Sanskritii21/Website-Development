@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:Courier, monospace;
+            background: rgb(223, 223, 223);
+            text-align: center;
+            pad: 40px;
+        }
+
+        h1{color: rgb(1, 63, 1);}
+        button {
+            background:rgb(1, 63, 1) ;
+            color:rgb(223, 223, 223) ;
+            padding: 15px 20px;
+            border: 5px;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        div{
+            border: 2px solid rgb(1, 63, 1);
+            width: 1020px;
+            text-align: center;
+            border-radius: 9px;
+            margin: 6px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Delivery Tracker</h1>
+    <button onclick="saveOrder()">Save Order</button>
+    <button onclick="startDelivery()">Start Delivery</button><br><br>
+
+    <div>JSON Text: <span id="json-text"></span></div>
+    <div>Loaded Item: <span id="loaded-item"></span></div>
+    <div>Loaded Price: <span id="loaded-price"></span></div>
+    <div>Status: <span id="status"></span></div>
+    <div>Result: <span id="result"></span></div>
+
+    <script>
+        let order = {
+            item: "Chole Bhature",
+            price: 4,
+            shop: "Udupi Ruchi"
+        };
+
+        function saveOrder() {
+            let jsonText =JSON.stringify(order);
+            let loadedOrder =JSON.parse(jsonText);
+
+            document.getElementById("json-text").innerHTML  = jsonText;
+            document.getElementById("loaded-item").innerHTML  = loadedOrder.item;
+            document.getElementById("loaded-price").innerHTML  = "$" + loadedOrder.price;  
+        }
+
+        function delay(ms) {
+            return new Promise(function(resolve) {
+                setTimeout(resolve, ms);
+            });
+        }
+
+        async function startDelivery() {
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("status").innerHTML = "Order Recived!";
+            setTimeout(function() {
+            document.getElementById("status").innerHTML = "Kitchen Is Preparing...";}, 1000);
+
+            await delay(3000);
+            document.getElementById("status").innerHTML = "Out for delivery!";
+            await delay(2000);
+            document.getElementById("result").innerHTML = "Your order has arrived!";}
+
+        
+    </script>
+</body>
+</html>
